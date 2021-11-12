@@ -18,7 +18,9 @@ function getCountryByIso3(isoCode){
  * @returns {string}
  */
 function getCountryTranslatedName(isoCode, language){
-    
+    const country = getCountryByIso3(isoCode)
+    const langs = Object.keys(country.translations)
+    return country.translations[language]
 }
 /**Get an array of all the countries with the specified subregion
  * @param  {string} subregion
